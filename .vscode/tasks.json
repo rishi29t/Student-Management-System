@@ -1,0 +1,44 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build SMS",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "src/main.cpp",
+                "src/Student.cpp",
+                "src/StudentManager.cpp",
+                "-I", "include",
+                "-std=c++17",
+                "-Wall",
+                "-o", "sms.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Build & Run SMS",
+            "type": "shell",
+            "command": "g++ src/main.cpp src/Student.cpp src/StudentManager.cpp -I include -std=c++17 -Wall -o sms.exe && .\\sms.exe",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated"
+            },
+            "problemMatcher": "$gcc"
+        }
+    ]
+}
